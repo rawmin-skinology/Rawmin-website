@@ -1,0 +1,311 @@
+/* Custom Typography Definitions: Aeonik Light (Headings) & Manrope (Body) */
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Light.woff2') format('woff2'),
+       url('/fonts/Aeonik-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Light';
+  src: url('/fonts/Aeonik-Light.woff2') format('woff2'),
+       url('/fonts/Aeonik-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Light.woff2') format('woff2'),
+       url('/fonts/Aeonik-Light.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Variable.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-ivory: #EDF8F9;
+    --text-charcoal: #16393C;
+    --brand-teal: #2CB6C4;
+    --brand-teal-dark: #1FA4B2;
+    --brand-teal-deep: #14484E;
+    --brand-aqua: #8DE3E8;
+    --brand-aqua-light: #E0F5F7;
+    --brand-gold: #B89A60;
+    --brand-forest: #2CB6C4;
+    --brand-forest-dark: #1FA4B2;
+    --brand-sage: #8DE3E8;
+    --brand-sage-light: #E0F5F7;
+    --brand-champagne: #B89A60;
+    --brand-champagne-dark: #967A42;
+    --white: #FFFFFF;
+
+    /* Apple-tuned physical curves & springs (from animate & apple-design-web) */
+    --ease-out-apple: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+    --ease-in-out-smooth: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  /* Body Typography: Manrope for all body copy and general interface elements */
+  *,
+  *::before,
+  *::after {
+    font-family: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html,
+  body,
+  p,
+  span,
+  a,
+  li,
+  label,
+  button,
+  input,
+  optgroup,
+  select,
+  textarea,
+  table,
+  td,
+  th,
+  small,
+  strong,
+  b,
+  blockquote,
+  figcaption {
+    font-family: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-ivory);
+    color: var(--text-charcoal);
+    font-family: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  /* Luxury Cosmetics Typography: Aeonik Light for ALL headings */
+  h1, h2, h3, h4, h5, h6,
+  h1 *, h2 *, h3 *, h4 *, h5 *, h6 *,
+  .font-heading,
+  .font-heading *,
+  .font-serif,
+  .font-serif *,
+  .font-display,
+  .font-display * {
+    font-family: var(--font-aeonik), 'Aeonik', 'Aeonik Light', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 300 !important;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  h1, h1 * {
+    letter-spacing: -0.03em;
+    font-weight: 300 !important;
+  }
+
+  h2, h2 * {
+    letter-spacing: -0.025em;
+    font-weight: 300 !important;
+  }
+
+  h3, h3 *, h4, h4 *, h5, h5 *, h6, h6 * {
+    letter-spacing: -0.015em;
+    font-weight: 300 !important;
+  }
+
+  p {
+    letter-spacing: -0.005em;
+  }
+
+  /* Impeccable & Apple HIG selection & focus surfaces */
+  ::selection {
+    background-color: #2CB6C4;
+    color: #FFFFFF;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2CB6C4;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Smooth scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF8F5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(18, 22, 20, 0.2);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(18, 22, 20, 0.35);
+  }
+}
+
+/* Apple Liquid Glass Translucent Surface Utilities */
+.apple-glass {
+  background: rgba(250, 248, 245, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.apple-glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(18, 22, 20, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(18, 22, 20, 0.04), 0 2px 6px -1px rgba(18, 22, 20, 0.02);
+}
+
+.apple-glass-dark {
+  background: rgba(18, 22, 20, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tactile interactive feedback (1:1 Apple response) */
+.apple-press {
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.15s ease;
+}
+.apple-press:active {
+  transform: scale(0.975);
+}
+
+/* Luxury card with Apple craft elevation */
+.luxury-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(18, 22, 20, 0.07);
+  box-shadow: 0 2px 8px -2px rgba(18, 22, 20, 0.03), 0 1px 3px rgba(18, 22, 20, 0.02);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .luxury-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -8px rgba(25, 125, 137, 0.12), 0 4px 12px -2px rgba(25, 125, 137, 0.05);
+    border-color: rgba(25, 125, 137, 0.45);
+  }
+}
+
+/* Custom Editorial Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+
+/* Subtle turquoise marble / liquid mesh backdrop utilities */
+.turquoise-marble {
+  background: 
+    radial-gradient(at 0% 0%, rgba(141, 227, 232, 0.45) 0px, transparent 55%),
+    radial-gradient(at 100% 0%, rgba(44, 182, 196, 0.22) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(141, 227, 232, 0.4) 0px, transparent 55%),
+    radial-gradient(at 0% 100%, rgba(44, 182, 196, 0.18) 0px, transparent 50%),
+    #EDF8F9;
+}
+
+.turquoise-hero-mesh {
+  background: 
+    radial-gradient(ellipse at 50% 15%, rgba(44, 182, 196, 0.25) 0%, transparent 65%),
+    radial-gradient(circle at 10% 85%, rgba(141, 227, 232, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 90% 85%, rgba(178, 237, 240, 0.35) 0%, transparent 55%),
+    #EDF8F9;
+}
+
+.turquoise-light-gradient {
+  background: linear-gradient(135deg, #D4F2F5 0%, #E6F7F9 50%, #C8EFF2 100%);
+}
+
+.turquoise-deep-gradient {
+  background: linear-gradient(135deg, #1B7E89 0%, #24A6B5 50%, #2CB6C4 100%);
+}
+
+/* Hero anchor logo stays crisp, centered and visible */
+.hero-anchor-img {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease;
+}
+
+/* Hide scrollbars where needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Reduced motion accessibility compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+    overflow-x: auto;
+  }
+  .luxury-card:hover {
+    transform: none !important;
+  }
+  .apple-press:active {
+    transform: none !important;
+  }
+}
